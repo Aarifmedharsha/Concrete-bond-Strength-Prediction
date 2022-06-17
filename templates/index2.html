@@ -1,0 +1,38 @@
+1<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>prediction model</title>
+
+<link rel="stylesheet" href="static/style2.css">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Prediction of Bond Strength of the concrete </h1>
+ 
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{url_for('predict')}}"method="post">
+    	<input type="text" name="(cb)" placeholder="tf(mm)"  />
+      <input type="text" name="(Mpa)" placeholder="Fc(MPa)"  />
+      <input type="text" name="(Gpa)" placeholder="Ef(GPa)"  />
+      <input type="text" name="(na)" placeholder="Lf(mm)"  />
+      <input type="text" name="(st)" placeholder="bf(mm)" />
+      <input type="text" name="(pr)" placeholder="bc(mm)"  />
+		<br>
+
+        <button class="jeeet" type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+        
+    </form>
+
+   <br>
+   {{ prediction_text }}
+   <br>
+
+ </div>
+
+
+</body>
+</html>
